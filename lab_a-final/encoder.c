@@ -58,11 +58,15 @@ int main(int argc, char **argv) {
                 newChar = c - 'A';
                 newChar = (newChar + (sequence[seqIndex] - '0')) % 26;
                 newChar = newChar + 'A';
+                if(newChar < 'A')
+                    newChar = newChar + 26;
             }
             else if(encryptType == -1) {
                 newChar = c - 'A';
                 newChar = (newChar - (sequence[seqIndex] - '0')) % 26;
                 newChar = newChar + 'A';
+                if(newChar < 'A')
+                    newChar = newChar + 26;
             }
         }
         else if((c >= 'a') && (c <= 'z')){
@@ -70,11 +74,15 @@ int main(int argc, char **argv) {
                 newChar = c - 'a';
                 newChar = (newChar + (sequence[seqIndex] - '0')) % 26;
                 newChar = newChar + 'a';
+                if(newChar < 'a')
+                    newChar = newChar + 26;
             }
             else if(encryptType == -1) {
                 newChar = c - 'a';
                 newChar = (newChar - (sequence[seqIndex] - '0')) % 26;
                 newChar = newChar + 'a';
+                if(newChar < 'a')
+                    newChar = newChar + 26;
             } 
         }
         else if((c >= '0') && (c <= '9')){
@@ -82,11 +90,15 @@ int main(int argc, char **argv) {
                 newChar = c - '0';
                 newChar = (newChar + (sequence[seqIndex] - '0')) % 10;
                 newChar = newChar + '0';
+                if(newChar < '0')
+                    newChar = newChar + 10;
             }
             else if(encryptType == -1) {
                 newChar = c - '0';
                 newChar = (newChar - (sequence[seqIndex] - '0')) % 10;
                 newChar = newChar + '0';
+                if(newChar < '0')
+                    newChar = newChar + 10;
             }
         }
         else //char that isn't a letter or a number
